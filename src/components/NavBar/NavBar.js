@@ -1,6 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button,Navbar,NavDropdown,Nav,Form,FormControl } from 'react-bootstrap'
+import { CartWidget } from '../CartWidget/CartWidget'
 
 export const NavBar = () => {
     return(
@@ -10,7 +11,7 @@ export const NavBar = () => {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
         <Nav.Link href="#home">Inicio</Nav.Link>
-        <Nav.Link href="#link">Carrito</Nav.Link>
+        <Nav.Link href="#link"> <CartWidget/></Nav.Link>
         <NavDropdown title="Categorias" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Productos</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Servicios</NavDropdown.Item>
