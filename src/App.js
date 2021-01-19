@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
-
+import { ItemCount } from './components/ItemCount/ItemCount'
 
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
 
       < NavBar />
       < ItemListContainer greeting={'Bienvenirijillo'} />
+      <ItemCount initial={1} stock={5}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
