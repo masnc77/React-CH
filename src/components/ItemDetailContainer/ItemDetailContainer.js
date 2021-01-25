@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {ItemList} from '../ItemList/ItemList'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import {useParams} from 'react-router-dom'
 
-
-const products = [{
+const itemList = [{
 
     id: 2,
     titulo: "Play 2",
@@ -39,25 +39,26 @@ const products = [{
     description: "El auténtico corazón de esta consola, el circuito integrado que aglutina tanto la CPU como la GPU, ha salido de los laboratorios de una AMD que parece estar en mejor forma que nunca."
 }]
 
-export const ItemListContainer = () => {
-    const [items, setItems] = useState([])
-        useEffect(()=>{
 
-        const call = new Promise((resolve, reject) => {
-            setTimeout (()=> {
-                resolve(products)
-            },2000)
-            
-        })
-        
-        call.then(response => {
-            console.log(response)
-            setItems(response)
-        })
+export const ItemDetailContainer = () => {
+    const [item, setItem] = useState([])
+    const {id} = useParams()
+    useEffect(() =>{ 
 
-    }, [])
-    return (<> < ItemList items={items}/> </>)
- }
+    const call = new Promise ((resolve, reject) => {
+        setTimeout (() => {
+            resolve(itemList)
+        },2000)
+    })
 
- 
+    call.then(response => {
+        console.log(response)
+        setItem(response[id -2])
+    })
 
+    
+
+    
+}, [])
+    return (<><ItemDetail getItem={item}/></>)
+}

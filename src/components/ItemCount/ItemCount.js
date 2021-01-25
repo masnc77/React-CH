@@ -20,7 +20,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
     return (
         <>
         <button onClick={sumar} >+</button>
-        <span>{numero}</span>
+        <span>   {numero}   </span>
         <button onClick={restar}>-</button>
         </>
     )
