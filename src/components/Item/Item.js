@@ -20,7 +20,7 @@ const Item = ({item}) => {
             <p>{`USD ${item.precio}`}</p>
             {/* <p>{item.description}</p> */}
 
-            <ItemCount initial={1} stock={5}/>
+            
         </div>
         
     );

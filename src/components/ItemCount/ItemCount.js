@@ -1,27 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const ItemCount = ({stock, initial, onAdd}) => {
+export const ItemCount = ({sumar, restar, stock, initial, onAdd, numero}) => {
 
-    const [numero, setNumero] = useState(initial)
-
-    const sumar = () => {
-        if (numero < stock ) {
-             setNumero(numero + 1)
-                        
-        }
-    }
-
-    const restar = () =>{
-        if ( numero > initial ) {
-            setNumero(numero - 1)
-        }
-    }
-
+console.log(numero)
     return (
+
         <>
-        <button onClick={sumar} >+</button>
-        <span>   {numero}   </span>
-        <button onClick={restar}>-</button>
+        <button onClick={sumar} disabled={numero===stock} >+</button>
+        <span>  {numero} </span>
+        <button onClick={restar} disabled={numero===initial} >-</button>
+        <button onClick={onAdd}>Agregar al Carrito</button>
+
+
         </>
     )
   };
