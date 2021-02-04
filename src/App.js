@@ -1,3 +1,4 @@
+import React, { useContext } from 'react'
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
@@ -8,14 +9,18 @@ import  Contact  from './components/Contact/Contact'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemDetail from './components/ItemDetail/ItemDetail';
 import {Cart} from './components/Cart/Cart'
+import { Context } from './components/CartContext/CartContext'
+
 
 
 function App() {
+  
 
-  return (
-    
-    <BrowserRouter>
+  return ( 
     <div className="App">
+    <BrowserRouter>
+    <Context>
+    
     < NavBar/>
     <p style={{fontSize:40, letterSpacing: 10,}}>BIENVENIDOS A NUESTRO E-COMMERCE</p>
     
@@ -37,9 +42,11 @@ function App() {
       
       </Switch>            
 
-    </div>
+    
+    </Context>
     </BrowserRouter> 
+    </div>
   );
 }
 
-export default App;
+export default App
