@@ -6,7 +6,7 @@ import { CartContext } from '../CartContext/CartContext'
 
 const Item = ({item}) => {
     
-    const [contador, setcontador] = useContext(CartContext)
+    const [contador, setContador] = useContext(CartContext)
 
     return(
         
@@ -21,7 +21,7 @@ const Item = ({item}) => {
 
             <p>{item.categoria}</p>
             <p>{`USD ${item.precio}`}</p>
-            {/* <p>{item.description}</p> */}
+            
 
             
         </div>

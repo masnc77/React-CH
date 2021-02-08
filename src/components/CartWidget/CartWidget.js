@@ -4,11 +4,10 @@ import './CartWidget.css'
 import { CartContext } from '../CartContext/CartContext'
 
 export const CartWidget = () =>{
+    
     var cart = carrito
     
-    const [contador, setcontador] = useContext (CartContext)
+    const [contador, setContador] = useContext (CartContext)
     
-    return( <div> Carrito {contador}<img id="cart"src ={cart}></img>  </div>
-
-    )
+    return(<div> Carrito {contador}<img id="cart"src ={cart}></img> </div>)
 }

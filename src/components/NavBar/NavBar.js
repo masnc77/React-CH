@@ -1,4 +1,6 @@
 import React, {useContext} from "react";
+import '../../App.css'
+import logo from '../../img/logo.jpg'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Navbar, NavDropdown, Nav, Form, FormControl,} from "react-bootstrap";
 import { CartWidget } from "../CartWidget/CartWidget";
@@ -7,13 +9,15 @@ import { Context } from '../CartContext/CartContext'
 
 export const NavBar = () => {
 
+var log = logo
   
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Sierra</Navbar.Brand>
+  
+    <Navbar bg="dark" variant="dark" expand="xl" id="nav">
+      <Navbar.Brand  href="#home"><img style={{height:50, width:50}} src={log}></img></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse  id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#home">Inicio</Nav.Link>
           
@@ -32,5 +36,6 @@ export const NavBar = () => {
         </Form>
       </Navbar.Collapse>
     </Navbar>
+    
   );
 };

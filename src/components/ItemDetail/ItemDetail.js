@@ -12,6 +12,8 @@ export default function ItemDetail({getItem}) {
 
         const [numero, setNumero] = useState(initial)
         const [add, setAdd] = useState(false)
+        const [cantidad, setCantidad] = useState(0)
+        const {agregarProducto} = CartContext()
 
         const sumar = () => {
             if (contador < stock ) {
@@ -29,13 +31,20 @@ export default function ItemDetail({getItem}) {
 
     const onAdd = () => {
            
-        numero <= stock ? alert ("Agregado $(`contador`) Articulos"):alert("No Hay")
-        if (numero > 0) {
-            setAdd(true)     
+        contador <= stock || initial ? alert (`Agregaste ${contador} al carrito`):alert("No Hay")
+        if (contador > 0) {
+            setAdd(true)
+            setCantidad(contador)     
             
         }
 
     }
+
+    const agregarCarrito = () => {
+        agregarProducto(producto, cantidad)
+    }
+
+   
 
     return (
         <div>
@@ -52,8 +61,8 @@ export default function ItemDetail({getItem}) {
             { add ?     
             <Link to={"/cart/"}>
 
-            <button>Terminar mi compra {contador}! </button>
-            </Link> : <ItemCount sumar={sumar} restar={restar} onAdd={onAdd} initial={initial} stock={stock} numero={numero}/>
+            <button onClick={agregarCarrito}>Terminar mi compra {contador}! </button>
+            </Link> : <ItemCount sumar={sumar} restar={restar} onAdd={onAdd} numero={numero}/>
 
             }
             

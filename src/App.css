@@ -1,6 +1,16 @@
+#bas-nav{
+  text-align: center;
+  color: red;
+}
 
+#nav{
+  justify-content: center;
+  text-align: center;
+  color: red;
+}
 
 .App {
+  justify-content: center;
   text-align: center;
   background-color: #282c34;
   font-size: 20px;

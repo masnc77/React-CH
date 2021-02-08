@@ -8,7 +8,7 @@ import { BrowserRouter , Switch , Route} from 'react-router-dom'
 import  Contact  from './components/Contact/Contact'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemDetail from './components/ItemDetail/ItemDetail';
-import {Cart} from './components/Cart/Cart'
+import { Cart } from './components/Cart/Cart'
 import { Context } from './components/CartContext/CartContext'
 
 

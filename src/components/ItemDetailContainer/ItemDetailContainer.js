@@ -1,6 +1,30 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom'
+import { getFirestore } from '../../firebase/index'
+
+useEffect(()=>{
+
+let db = getFirestore();
+let itemsFirebase = db.collection("items");
+itemsFirebase.get()
+    .then((querySnapshot)=>{
+        querySnapshot.size === 0 && console.log("hay 1 item");
+
+        let arrayItems = querySnapshot.docs.map((doc)=> {
+            return ({
+            id: doc.id,
+            ...doc.data()
+        })
+        })
+        console.log("arrayItems", arrayItems)
+        setItemsdb(arrayItems)
+})
+},[])
+
+
+
+
 
 const itemList = [{
 
@@ -48,7 +72,7 @@ export const ItemDetailContainer = () => {
     const call = new Promise ((resolve, reject) => {
         setTimeout (() => {
             resolve(itemList)
-        },2000)
+        },100)
     })
 
     call.then(response => {
