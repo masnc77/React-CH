@@ -5,7 +5,7 @@ import { CartContext } from '../CartContext/CartContext'
 
 export const ItemCount = ({sumar, restar, onAdd, numero}) => {
 
-    const [contador, setContador] = useContext(CartContext)
+    const {contador, setContador} = useContext(CartContext)
 
     const initial = 0
     const stock = 5

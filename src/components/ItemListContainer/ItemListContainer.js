@@ -2,55 +2,38 @@ import React, {useState, useEffect} from 'react'
 import {ItemList} from '../ItemList/ItemList'
 import { getFirestore } from '../../firebase/index'
 
-useEffect(()=>{
-
-let db = getFirestore();
-let itemsFirebase = db.collection("items");
-itemsFirebase.get()
-    .then((querySnapshot)=>{
-        querySnapshot.size === 0 && console.log("hay 1 item");
-
-        let arrayItems = querySnapshot.docs.map((doc)=> {
-            return ({
-            id: doc.id,
-            ...doc.data()
-        })
-        })
-        console.log("arrayItems", arrayItems)
-        setItemsdb(arrayItems)
-})
-},[])
 
 
 const products = [{
-
+    
+    
     id: 2,
     titulo: "Play 2",
     categoria: "Electronicos",
     precio: 100,
     imagen:"https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/04/25/15878228713236.jpg",
     description: "PlayStation 2 es el sucesor de PlayStation (PS1), y compite contra la consola Dreamcast de Sega, la consola Nintendo GameCube de Nintendo y el sistema Xbox de Microsoft."
-
+    
 },{
-
+    
     id: 3,
     titulo: "Play 3",
     categoria: "Electronicos",
     precio: 200,
     imagen: "https://i.blogs.es/4ca923/ps3_superslim-580x436/1366_2000.jpeg",
     description: "La PlayStation 3 tiene una forma convexa de su lado izquierdo cuando está en la posición vertical, y tiene un elegante acabado negro con el logotipo de PlayStation 3 en el lado izquierdo."
-
+    
 },{
-
+    
     id: 4,
     titulo: "Play 4",
     categoria: "Electronicos",
     precio: 300,
     imagen: "https://blog.latam.playstation.com/tachyon/sites/3/2013/08/ps41.jpg",
     description: "PlayStation 4 cuenta con un procesador AMD de 8 núcleos bajo la arquitectura x86-64. Estas instrucciones x86-64 están diseñados para hacer más fácil el desarrollo de videojuegos en la consola de nueva generación, que atrae a un mayor número de desarrolladores."
-
+    
 },{
-
+    
     id: 5,
     titulo: "Play 5",
     categoria: "Electronicos",
@@ -60,24 +43,31 @@ const products = [{
 }]
 
 export const ItemListContainer = () => {
+
     const [items, setItems] = useState([])
-        useEffect(()=>{
 
-        const call = new Promise((resolve, reject) => {
-            setTimeout (()=> {
-                resolve(products)
-            },2000)
-            
-        })
-        
-        call.then(response => {
-            console.log(response)
-            setItems(response)
-        })
+    useEffect(()=>{
 
-    }, [])
+let db = getFirestore();
+let itemsFirebase = db.collection("items");
+itemsFirebase.get()
+    .then((querySnapshot) => {
+        querySnapshot.size === 1 && console.log("hay 1 item");
+
+        let arrayItems = querySnapshot.docs.map((doc)=> {
+            return ({
+            id: doc.id,
+            ...doc.data()
+        })
+        })
+        console.log("arrayItems", arrayItems)
+        setItems(arrayItems)
+})
+},[])
+
     return (<> < ItemList items={items}/> </>)
- }
+}
+
 
  
 

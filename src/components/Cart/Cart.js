@@ -1,46 +1,21 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import { CartContext } from '../CartContext/CartContext'
-import { Link } from 'react-router-dom'
 
-export const Cart = () => {
 
-    const {producto, borrarProducto} = CartContext()
 
-const eliminar = (i) => {
-    borrarProducto(i.id)
-}
 
+export const Cart = () =>{
     
-    return (
-    <section>
-        <div>
-           <h2>Mis Compras</h2>
-           {<Link to="/" exact>
-               <button>Seguir Comprando</button>
-           </Link>}
-       </div>
-       <div style={{justifyContent:"center"}}>
-           {productos.map((item) => ( 
-             <div>
-                <div>
-                    <img style={{width: 200,height: 250}} src={item.imagen} alt={item.id}/>
-                </div>
-                <h4 >{item.nombre}</h4>  
+    const {carrito} = useContext(CartContext)
 
-                <p>item: {item.descripcion}</p>
-                
-                <input style={{width:"7%",border:"none",marginLeft:"5px"}} readOnly type="text" placeholder={item.quantity}/>
-                <div>
-                    <button onClick={()=>eliminar(item)}>
-                        <FontAwesomeIcon icon={faTrashAlt} />
-                    </button>
-                </div>
-                <div> <p>Precio: ${item.precio}</p></div>
-             </div>
-             )
-           )}
+    useEffect(() => {
+        
+        return () => {
+            console.log(carrito)
+        }
+    }, [])
 
-       </div>
-    </section>)
+    return(<div><div>{carrito.map((item)=>(<div>{item.titulo}</div>))}</div>
+        </div>)
 }
 

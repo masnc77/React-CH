@@ -14,21 +14,25 @@ var log = logo
 
   return (
   
-    <Navbar bg="dark" variant="dark" expand="xl" id="nav">
-      <Navbar.Brand  href="#home"><img style={{height:50, width:50}} src={log}></img></Navbar.Brand>
+    <Navbar bg="dark" variant="dark" expand="xl" id="nav" className="">
+      <Navbar.Brand ><img style={{height:50, width:50}} src={log} className="justify-content-beetween"></img></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse  id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Inicio</Nav.Link>
+          <Link to="/">Inicio</Link>
           
-          <NavDropdown title="Categorias" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Productos</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Servicios</NavDropdown.Item>
+          <Link to="/">
+          <NavDropdown title="Categorias" id="basic-nav-dropdown" >
+          
+
+            <NavDropdown.Item ><Link to="/">Productos</Link></NavDropdown.Item>
+            <NavDropdown.Item ><Link to="/servicios">Servicios</Link></NavDropdown.Item>
+            
           </NavDropdown>
-          <Nav.Link href="#link">
-            {" "}
+          </Link>
+
             <CartWidget />
-          </Nav.Link>
+          
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
