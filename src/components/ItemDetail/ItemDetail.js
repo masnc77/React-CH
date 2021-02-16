@@ -49,7 +49,7 @@ export default function ItemDetail({getItem}) {
             { getItem && <img style={{height: 300, width:500}} src={getItem.imagen}></img>}
             <br></br>
             <br></br>
-            { getItem && <p >{getItem.descriction}</p>}
+            { getItem && <p >{getItem.description}</p>}
             { getItem && <p>{`USD ${getItem.precio}`}</p>}
 
             

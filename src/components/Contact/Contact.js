@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const Contact = () =>{
+export const Contact = () =>{
+
     return(
-<div>
-    <h1> Hola a Todos </h1>
-    
-</div>
+       <div>
+           <p>holis</p>
+           
+        </div>
+
 );
 };
 
-export default Contact;

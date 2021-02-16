@@ -13,6 +13,7 @@ import { ContextProvider } from './components/CartContext/CartContext'
 
 
 
+
 function App() {
   
 
@@ -38,6 +39,8 @@ function App() {
       <Route path='/'>
       <ItemListContainer/>
       </Route>
+
+      
 
      
       
