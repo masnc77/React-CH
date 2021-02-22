@@ -17,21 +17,6 @@ export const ContextProvider = ({children}) =>{
         setCantidadDeProducto(cantidadDeProducto + cantidad)
         setCarrito ([...carrito, {...producto, cantidad: cantidad}])
         
-
-
-
-
-
-
-        /* const intro = carrito.find((i) => i.id === producto.id)
-
-        if (intro) {
-            intro.cantidad +- cantidad
-            setCarrito([...carrito])
-        }
-        else {
-        
-    } */
 }
 
     const borrarProducto = (id) => {

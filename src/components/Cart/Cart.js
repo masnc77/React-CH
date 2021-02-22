@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { getFirestore } from '../../firebase/index'
 import firebase from 'firebase/app'
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 
 const useStyles = makeStyles({
@@ -31,12 +32,37 @@ export const Cart = () =>{
     const {carrito} = useContext(CartContext)
     const classes = useStyles();
 
-    useEffect(() => {
+    const[precioFinal, setprecioFinal] = useState(0)
+    const [ordenId, setOrdenId] = useState('')
+    const [loading, setLoading] = useState('')
+    const {id} = useParams()
+
+useEffect(() => {
+  carrito.map(itemCarrito => setprecioFinal(precioAnterior => precioAnterior+(itemCarrito.cantidad*itemCarrito.precio)))
+},[carrito])
+
+  useEffect(() => {
+
+    let db = getFirestore()
+    let Ordenes = db.collection('ordenes')
         
-        return () => {
-            console.log(carrito)
-        }
+    const nuevaOrden = {
+          
+         
+        producto: carrito, 
+        date: firebase.firestore.Timestamp.fromDate(new Date()),
+        precio: precioFinal,
+         
+    }  
+    Ordenes.add(nuevaOrden).then(({id}) => {
+        setOrdenId(id)
+        
+    }).finally(() => {
+        setLoading(false)
+    })
+        
     }, [])
+    
 
     return(<div><div>{carrito.map((item)=>(<div>
         <Card className={classes.root} style={{margin:20, borderRadius:20, backgroundColor:"lightgrey"}}>
@@ -60,36 +86,25 @@ export const Cart = () =>{
         </CardActionArea>
        
       </Card>
-    </div>))}</div>
-                
-        </div>)
-
+      
+    </div>))}
+    </div>  <h1>Precio Total $ {precioFinal}</h1>
     
+            <div>
+              <input type="text" placeholder="Nombre y Apellido"></input>
+              <input type="email" placeholder="Dirección de E-Mail"></input>
+              <Link to="/">
+              <button onSubmit>Finalizar</button>
+              </Link> 
+            </div>    
+                     
+    </div>
+    )
+
+    }
+
+
+
+  
 
  
-const crearOrden = () => {
-
-    const [ordenId, setOrdenId] = useState('')
-    const [loading, setLoading] = useState('')
-    const {id} = useParams()
-
-    useEffect(() => {
-
-    let db = getFirestore()
-    let Ordenes = db.collection('ordenes')
-        
-    const nuevaOrden = {
-        /* cliente: userInfo, */
-        /* producto: carrito, */
-        date: firebase.firestore.Timestamp.fromDate(new Date()),
-        /* precio: total(), */
-    }  
-    Ordenes.add(nuevaOrden).then(({id}) => {
-        setOrdenId(id)
-        
-    }).finally(() => {
-        setLoading(false)
-    })
-        
-    }, [])
-    return (<></>)}}

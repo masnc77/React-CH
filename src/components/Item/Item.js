@@ -51,34 +51,9 @@ const Item = ({item}) => {
         </CardActionArea>
        
       </Card>
-      </div>
       
+      </div>
         
-    )
-
-    /* return(
-    
-        <div className="container" style={{width:350, height:400,}}>
-            <div className="card" style={{fontFamily:'sans-serif', letterSpacing:0.05, lineHeight:1.6, borderRadius:10, margin:20, textAlign:'center',
-        }}>
-        <div style={{marginBottom: 40, display: 'inline-block'}} >
-            
-            <img style={{width: 200, height: 200, textAlign: 'center', margin: 40}} src={item.imagen} alt={item.titulo} />
-            
-
-            
-                <p style={{fontSize: 40,color: 'red', textAlign:"center"}}>{item.titulo}</p>
-            </Link>
-
-            <p>{item.categoria}</p>
-            <p>{`USD ${item.precio}`}</p>
-            
-
-            </div>
-        </div>
-        </div>
-        
-    ); */
-};
+    )};
 
 export default Item;
