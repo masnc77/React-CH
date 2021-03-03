@@ -18,9 +18,6 @@ const useStyles = makeStyles({
       height: 140,
     },
   });
-  
-  
-
 
 const Item = ({item}) => {
     

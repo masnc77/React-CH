@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext'
 
 
 export default function ItemDetail({getItem}) {
-        console.log({getItem})
+        
         const {contador, setContador, agregarProducto} = useContext(CartContext)
         
         const initial = 0
@@ -39,7 +39,7 @@ export default function ItemDetail({getItem}) {
         }
 
     }
-
+    console.log({getItem})
     
     return (
         
@@ -57,10 +57,18 @@ export default function ItemDetail({getItem}) {
 
 
             { add ?     
+            <div>
             <Link to="/cart">
-
             <button onClick={()=> agregarProducto(getItem, contador)}>Terminar mi compra {contador}! </button>
-            </Link> : <ItemCount sumar={sumar} restar={restar} onAdd={onAdd} numero={numero}/>
+            </Link> 
+                <br></br>
+                <br></br>
+            <Link to="/">
+            <button onClick={()=> agregarProducto(getItem, contador)}>Ir al Menu</button>
+            </Link>
+            </div>
+            :
+            <ItemCount sumar={sumar} restar={restar} onAdd={onAdd} numero={numero}/>
             
             }
             

@@ -6,22 +6,25 @@ import { getFirestore } from '../../firebase/index'
 export const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
     const {id} = useParams()
+    
     useEffect(()=>{
 
         let db = getFirestore();
-
         let itemsFirebase = db.collection("items");
         let item = itemsFirebase.doc(id)
 
         item.get().then((doc) => {
-                
                setItem({id: doc.id, ...doc.data() });
-
             })
+        },[id])
 
-        },[])
-    return (<><ItemDetail getItem={item}/></>)
+       
+    
+        return (<><ItemDetail getItem={item} />
+    </>)
 }
+
+
 
     
 

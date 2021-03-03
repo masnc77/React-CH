@@ -7,11 +7,9 @@ import { CartWidget } from "../CartWidget/CartWidget";
 import { Contact } from "../Contact/Contact"
 import { Link } from "react-router-dom";
 
-
 export const NavBar = () => {
 
 var log = logo
-  
 
   return (
   
@@ -26,7 +24,7 @@ var log = logo
           <NavDropdown title="Categorias" style={{display:"flex", }}>
           
 
-            <NavDropdown.Item ><Link to="/consolas">Productos</Link></NavDropdown.Item>
+            <NavDropdown.Item ><Link path='/categorias'>Productos</Link></NavDropdown.Item>
             <NavDropdown.Item ><Link to="/contact">Contacto </Link></NavDropdown.Item>
             
           </NavDropdown>

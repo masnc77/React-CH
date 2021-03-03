@@ -2,21 +2,13 @@ import React, { useContext } from 'react'
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
-import { ItemCount } from './components/ItemCount/ItemCount'
-import { ItemList } from './components/ItemList/ItemList'
 import { BrowserRouter , Switch , Route} from 'react-router-dom'
-import  Contact  from './components/Contact/Contact'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import ItemDetail from './components/ItemDetail/ItemDetail';
 import { Cart } from './components/Cart/Cart'
 import { ContextProvider } from './components/CartContext/CartContext'
 
-
-
-
 function App() {
   
-
   return ( 
     <div className="App">
     <BrowserRouter>
@@ -24,7 +16,6 @@ function App() {
     
     < NavBar/>
     <p style={{fontSize:40, letterSpacing: 10,}}>BIENVENIDOS A NUESTRO E-COMMERCE</p>
-    
   
     <Switch>
 
@@ -40,12 +31,7 @@ function App() {
       <ItemListContainer/>
       </Route>
 
-      
-
-     
-      
       </Switch>            
-
     
     </ContextProvider>
     </BrowserRouter> 
