@@ -1,50 +1,41 @@
-# Proyecto de React en CoderHouse
+# Proyecto React de CoderHouse
 
-Este proyecto es parte del curso de React de CoderHouse.
+Hola, mi nombre es Marcos Sierra, de Montevideo, Uruguay.
+Soy estudiante de CoderHouse y en esta ocasión creamos un E-commerce desde 0 usando React, separamos el proyecto mediante 
+componentes, los cuales se reutilizaran de forma continua y acorde a las necesidades.
 
-Usamos create react app.
+## Comenzando 🚀
 
-Cronología
+Antes que nada debemos instalar algunos agregados los cuales hemos utilizado en este proyecto.
+Para instalarlos debemos ir a la terminal dentro del Visual Studio Code y escribir lo siguiente.
 
-Clase Nº1 => Nivelación.
-    Se repasaron los conocimientos basicos de los lenguajes, HTML, CSS y JS.
-    
-Clase Nº2 => Instalación y configuración.
-    Se instala y configura React, mediante NodeJs, tambien creamos la App.
+* React bootstrap
 
-Clase Nº3 =>
-    Creación del primer componente, NavBar.
+    npm install react-bootstrap bootstrap
 
-Clase Nº4 =>
-    Creación de los componentes, CartWidget (ubicado en la NavBar), e ItemListContainer.
+* Font Awesome
 
-Clase Nº5 =>
-    Creación del componente ItemCount.
+    npm install --save @fortawesome/free-solid-svg-icons
+    npm install --save @fortawesome/react-fontawesome
 
-Clase Nº6 =>
-    Creación de los componentes Item e ItemList.
+Para inicializar el proyecto una vez instalado lo anterior, debemos clonar el repositorio y una vez hecho esto,
+en la terminal de Visual Studio Code, escribimos: npm start.
+De esta forma, inicializara la web con sus respectivos funcionamientos de forma automática.
+De no ser asi, entramos al navegador y ponemos lo siguiente, http://localhost:3000.
 
-Clase Nº7 =>
-    Creación de los componentes ItemListContainer e ItemDetail.
+## Caracteristicas ⚙️
 
-Clase Nº8 =>
-    Primera entrega del proyecto, se crean los links y las rutas de navegación.
+* Puedes agregar tu producto y la cantidad deseada a comprar dentro del listado, el cual se agregara al carrito de compras.
+* Podras visualizar un detalle de cada producto.
+* Una vez agregado el producto, puedes elegir, entre seguir comprando o terminar tu compra.
+* Si tuviste un error, tranquilo, puedes borrar el item del carrito y volver a seleccionar el que en realidad gustes.
+* La compra generara un Id automatico de compra, el cual servira posteriormente para hacer seguimiento del producto encargado.
 
-Clase Nº9 =>
-    Importación de ItemCount en el ItemDetail, y configuración del evento de compra.
+😊 ® By Marcos Sierra ® 😊
 
-Clase Nº10 =>
-    Creación del CartContext.
 
-Clase Nº11 =>
-    Expansión de Cart (Se muestran los items, se da la opcion de eliminar los items agregados), actualización de CartWidget (muestra en tiempo real la cantidad de items agregados en el carrito).
+![Alt Text](https://media.giphy.com/media/0cNJjKBkkGPe3siCtX/giphy.gif)
 
-Clase Nº12 =>
-    Creación de usuario de Firebase, se conectan los items y categorias de FireBase con el ItemListContainer e ItemDetailContainer.
 
-Clase Nº13 =>
-    Se genera una orden de compra con datos de usuario, y se le devuelve al cliente un Id de orden auto-generada.
 
-Clase Nº14 =>
-    Limpieza de código, se elimina aquello que es obsoleto, y se hacen varios ajustes finales.
 
